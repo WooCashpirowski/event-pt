@@ -29,11 +29,9 @@ window.onscroll = () => {
   if (window.pageYOffset > 100) {
     navbar.classList.add("header-nav");
     logo.classList.add("logo-sm");
-    navList.style.color = "var(--color-main)";
   } else {
     navbar.classList.remove("header-nav");
     logo.classList.remove("logo-sm");
-    navList.style.color = "#ffffff";
   }
   const currentScrollPos = window.pageYOffset;
   if (prevScrollPos > currentScrollPos) {
