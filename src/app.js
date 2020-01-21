@@ -1,5 +1,8 @@
 import "./index.css";
 import "@fortawesome/fontawesome-free/js/all";
+import jump from "../node_modules/jump.js/dist/jump.module";
+import AOS from "../node_modules/aos/dist/aos";
+import "../node_modules/aos/dist/aos.css";
 
 // Counter
 (function() {
@@ -48,3 +51,50 @@ document.querySelector(".hamburger").addEventListener("click", () => {
     line.classList.toggle("blue-x");
   });
 });
+
+// Smooth Scroll
+
+document
+  .getElementById("home-link")
+  .addEventListener("click", () => jump("#home"));
+document
+  .getElementById("about-link")
+  .addEventListener("click", () => jump("#about"));
+document
+  .getElementById("registration-link")
+  .addEventListener("click", () => jump("#registration"));
+document
+  .getElementById("schedule-link")
+  .addEventListener("click", () => jump("#schedule"));
+document
+  .getElementById("pricing-link")
+  .addEventListener("click", () => jump("#pricing"));
+document
+  .getElementById("contact-link")
+  .addEventListener("click", () => jump("#contact"));
+document
+  .getElementById("registration-link-btn")
+  .addEventListener("click", () => jump("#registration"));
+document
+  .getElementById("topics-link-btn")
+  .addEventListener("click", () => jump(".topics"));
+
+// Topics fade-in
+
+AOS.init({
+  offset: 100,
+  duration: 1500
+});
+
+// function appearOnScroll() {
+//   const topics = document.querySelectorAll(".topic");
+//   const screenPos = window.innerHeight - 150;
+//   topics.forEach(topic => {
+//     const pos = topic.getBoundingClientRect().top;
+//     if (pos < screenPos) {
+//       topic.classList.add("appear");
+//     }
+//   });
+// }
+
+// window.addEventListener("scroll", appearOnScroll);

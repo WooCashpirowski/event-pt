@@ -1,14 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
   entry: {
-    app: [
-      "@babel/polyfill",
-      "./src/app.js"
-    ]
+    app: ["@babel/polyfill", "./src/app.js"]
   },
   output: {
     path: path.resolve(__dirname, "build"),
@@ -23,16 +21,12 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        loader: "babel-loader"
       },
       {
         test: /\.css$/i,
-        use: [
-            MiniCssExtractPlugin.loader,
-            "css-loader"
-      ]
-      },
-
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+      }
     ]
   },
 
@@ -49,7 +43,8 @@ module.exports = {
       }
     }),
     new MiniCssExtractPlugin({
-      filename: 'app.bundle.css',
-    })
+      filename: "app.bundle.css"
+    }),
+    new CopyPlugin([{ from: "src/assets", to: "assets" }])
   ]
 };
