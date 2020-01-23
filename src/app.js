@@ -1,4 +1,5 @@
 import "./index.css";
+import "./mobile.css";
 import "@fortawesome/fontawesome-free/js/all";
 import jump from "../node_modules/jump.js/dist/jump.module";
 import AOS from "../node_modules/aos/dist/aos";
@@ -7,7 +8,7 @@ import "../node_modules/aos/dist/aos.css";
 // Counter
 (function() {
   setInterval(() => {
-    const eventDate = new Date("apr 3 2020, 10:00:00").getTime();
+    const eventDate = new Date("apr 2 2020, 10:00:00").getTime();
     const currentTime = new Date().getTime();
 
     const diff = eventDate - currentTime;
@@ -25,8 +26,7 @@ import "../node_modules/aos/dist/aos.css";
 
 // Navbar
 const navbar = document.querySelector("header"),
-  logo = document.querySelector(".site-logo img"),
-  navList = document.querySelector(".nav-list");
+  logo = document.querySelector(".site-logo img");
 let prevScrollPos = window.pageYOffset;
 window.onscroll = () => {
   if (window.pageYOffset > 100) {
@@ -98,3 +98,47 @@ AOS.init({
 // }
 
 // window.addEventListener("scroll", appearOnScroll);
+
+// Schedule tabs
+const days = document.querySelectorAll(".day"),
+  scheduleItemsBox = document.querySelectorAll(".schedule-items");
+
+days.forEach(day => {
+  day.addEventListener("click", function() {
+    scheduleItemsBox.forEach(items => {
+      items.className = "schedule-items";
+      document.getElementById(this.dataset.id).className =
+        "schedule-items active";
+      days.forEach(i => {
+        i.className = "day";
+      });
+      this.className = "day active";
+    });
+  });
+});
+
+// File upload button
+const realFileBtn = document.getElementById("file"),
+  customTxt = document.getElementById("custom-txt");
+
+realFileBtn.addEventListener("change", () => {
+  if (realFileBtn.value) {
+    customTxt.innerText = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customTxt.innerText = "No file chosen";
+  }
+});
+
+// Submit form
+// UI
+const formBox = document.querySelector(".form"),
+  form = document.querySelector("form"),
+  confirmation = document.querySelector(".form-sent");
+
+form.addEventListener("submit", e => {
+  formBox.style.display = "none";
+  confirmation.style.display = "block";
+  // e.preventDefault();
+});

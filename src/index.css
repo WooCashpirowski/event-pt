@@ -75,11 +75,21 @@ a {
   text-align: center;
   font-size: 2.5rem;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 2rem 0 2rem;
+  padding: 2rem 0;
+}
+.section-header-sm {
+  text-align: center;
+  font-size: 1.6rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem 0;
 }
 
 .hidden {
   display: none;
+}
+
+.txt-c {
+  text-align: center;
 }
 
 /* HEADER */
@@ -144,6 +154,7 @@ header {
   background: url("/src/assets/img/imgpsh_fullsize_anim.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 .main-section .overlay {
@@ -212,7 +223,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .about .overlay-light {
@@ -223,29 +233,18 @@ header {
   z-index: 0;
 }
 
-.about .overlay-sm {
-  width: 90%;
-  height: 90vh;
+.about .text-content {
+  width: 95%;
   background: rgba(49, 71, 158, 0.8);
   box-shadow: 0px 0px 50px 0px rgba(49, 71, 158, 1);
-  border-radius: 24px;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 1.5rem;
   z-index: 1;
   color: #fff;
+  line-height: 1.4rem;
+  column-count: 3;
 }
-
-.about .overlay-sm .text {
-  width: 50%;
-  padding: 1.5rem;
-  font-size: 15px;
-}
-
-.about .overlay-sm .text p {
-  margin-bottom: 1rem;
-  line-height: 1.2rem;
+.about .overlay-sm p {
+  margin-top: 0.5rem;
 }
 
 /* TOPICS */
@@ -317,6 +316,11 @@ header {
   transform: translateX(0px);
   opacity: 1;
 } */
+
+.topics .topics-wrapper-min {
+  display: none;
+}
+
 /* INFO-BAR */
 
 .info-bar {
@@ -360,9 +364,10 @@ header {
 }
 
 .registration .deadlines {
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   text-align: center;
   margin: 3rem 0;
@@ -370,10 +375,12 @@ header {
 
 .registration .deadlines .card {
   padding: 1.5rem;
+  /* width: 315px; */
   background: var(--secondary-color);
   color: var(--light-color);
   position: relative;
   z-index: 1;
+  margin-bottom: 1rem;
 }
 
 .registration .deadlines .card::after {
@@ -388,56 +395,103 @@ header {
 }
 
 .registration .deadlines .card p {
-  margin-bottom: 1rem;
-}
-
-.registration .registration-link {
   margin-bottom: 2rem;
+  font-size: 18px;
 }
 
-.registration .registration-link h2 a {
-  transition: font-size 0.1s ease-in-out;
-}
-
-.registration .registration-link h2 a:hover {
-  font-size: 1.55rem;
-}
-
-.form {
+.form-box .form,
+.form-box .form-sent {
   background: var(--main-color);
   padding: 1rem;
   margin: 2rem 0;
   box-shadow: 0px 0px 100px 0px rgba(49, 71, 158, 1);
+  text-align: center;
+  color: #fff;
 }
 
-.form form {
+.form-box .form-sent {
+  display: none;
+  width: 320px;
+}
+.form-box .form-sent h2 {
+  margin-bottom: 2rem;
+}
+
+.form-box .form form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-.form form input {
+.form-box .form form input {
   padding: 0.5rem;
-  margin: 0.5rem;
-  min-width: 350px;
+  margin: 0.5rem 0;
+  min-width: 300px;
   border-radius: 5px;
 }
 
-.form form input:focus {
+.form-box .form form input:focus {
   border-bottom: 2px solid var(--secondary-color);
 }
 
-.form form button {
-  margin: 0.5rem;
+.form-box .form form label {
+  margin: 0.5rem 0;
+  width: 100%;
+  text-align: center;
 }
 
-/* .form form input[type="submit"] {} */
+.form-box .form form span {
+  color: #fff;
+  font-weight: normal;
+}
 
+.registration-link {
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.registration-link h2 a {
+  transition: font-size 0.1s ease-in-out;
+}
+
+.registration-link h2 a:hover {
+  font-size: 1.55rem;
+}
+
+/* WORKSHOP */
+.workshop {
+  text-align: center;
+  color: var(--main-color);
+  background: url("/src/assets/img/workshop-2.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.workshop .workshop-overlay {
+  background: rgba(237, 233, 233, 0.65);
+  padding-top: 2rem;
+  height: 100%;
+}
+
+.header-box {
+  width: 80%;
+  margin: 0 auto;
+  border: 5px solid var(--secondary-color);
+  box-shadow: 2px 2px 55px rgba(237, 233, 233, 0.3);
+}
+
+.workshop .desc {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  padding: 2rem;
+}
 /* SCHEDULE */
 
 .schedule {
-  /* height: 100vh; */
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -470,18 +524,6 @@ header {
   position: relative;
 }
 
-.schedule .schedule-wrapper .select-day .day::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 40px 25px 0 25px;
-  border-color: var(--light-color) transparent transparent transparent;
-  bottom: -40%;
-  left: 37%;
-}
-
 .schedule .schedule-wrapper .select-day .day:active {
   transform: scale(0.95);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
@@ -497,25 +539,28 @@ header {
   box-shadow: 5px 5px 5px rgba(49, 71, 158, 0.8);
 }
 
-.schedule .schedule-wrapper .select-day .day.active::after {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 40px 25px 0 25px;
-  border-color: var(--main-color) transparent transparent transparent;
-  bottom: -40%;
-  left: 37%;
-}
-
 .schedule .schedule-wrapper h2 {
   margin: 5rem 0;
 }
 
+.schedule .schedule-wrapper .schedule-items-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .schedule .schedule-wrapper .schedule-items {
   width: 100%;
-  margin-top: 5rem;
+  margin: 3rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.schedule .schedule-wrapper .schedule-items.active {
+  opacity: 1;
 }
 
 .schedule .schedule-wrapper .schedule-items .schedule-item {
@@ -524,9 +569,11 @@ header {
   width: 80%;
   align-items: center;
   background: var(--light-color);
+  margin-bottom: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.schedule .schedule-wrapper .schedule-item .schedule-item-info {
+.schedule .schedule-wrapper .schedule-items .schedule-item .schedule-item-info {
   background: var(--main-color);
   color: #fff;
   width: 20%;
@@ -545,12 +592,12 @@ header {
 
 /* PRICING */
 .pricing {
-  min-height: 100vh;
   background: var(--light-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  padding-bottom: 2rem;
 }
 
 .pricing .table th,
@@ -581,6 +628,10 @@ header {
   font-weight: bold;
 }
 
+.pricing p {
+  text-align: center;
+}
+
 /* CONTACT */
 .contact {
   min-height: 100vh;
@@ -592,7 +643,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 0 3rem 1rem;
   color: var(--main-color);
   text-align: center;
 }
@@ -621,9 +672,9 @@ header {
 
 #map {
   height: 70vh;
-  margin: 1rem 2rem 3rem;
+  margin: 1rem 0 1.5rem;
   padding: 1rem;
-  border: 1rem solid var(--main-color);
+  border: 8px solid var(--main-color);
 }
 
 /* Footer */
@@ -688,98 +739,4 @@ footer {
   color: var(--main-color);
   text-align: center;
   padding: 0.5rem 0;
-}
-
-@media screen and (max-width: 768px) {
-  header .hamburger {
-    padding: 8px;
-    cursor: pointer;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 3;
-  }
-  header .hamburger .line {
-    width: 30px;
-    height: 3px;
-    background: #fff;
-  }
-
-  header .hamburger .line.blue-x {
-    background: var(--main-color);
-  }
-
-  header .hamburger .line:nth-child(2),
-  header .hamburger .line:nth-child(3) {
-    margin-top: 6px;
-  }
-
-  header .navbar {
-    height: 100vh;
-    width: 50%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: var(--light-color);
-    transition: all 0.5s ease-out;
-    transform: translateX(768px);
-  }
-
-  header .navbar .nav-list {
-    flex-direction: column;
-    justify-content: center;
-    height: 70%;
-    padding-right: 0;
-    color: var(--main-color);
-  }
-
-  header .navbar.open {
-    transform: translateX(0);
-  }
-
-  header .navbar .nav-list .nav-list-item {
-    height: 12%;
-  }
-
-  .erasmus-footer {
-    width: 300px;
-    margin-left: -1rem;
-  }
-  .funding-info {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 520px) {
-  header .navbar {
-    width: 100%;
-    transform: translate(520px);
-  }
-
-  footer {
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 2rem 1rem;
-  }
-  .footer-left {
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .fa-facebook {
-    margin-right: 10rem;
-  }
-
-  .erasmus-footer {
-    margin: 0.5rem 0;
-  }
-
-  .footer-right {
-    align-items: center;
-    text-align: center;
-    margin-top: 2rem;
-    width: 100%;
-    flex-direction: column-reverse;
-  }
 }

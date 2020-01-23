@@ -1,0 +1,277 @@
+@media screen and (max-width: 990px) {
+  .topics .topics-wrapper {
+    display: none;
+  }
+  .topics .topics-wrapper-min {
+    display: block;
+  }
+  .topics .topics-wrapper-min .topic {
+    position: relative;
+    height: 100px;
+  }
+  .topics .topics-wrapper-min .topic img {
+    transform: scale(1.4);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-header {
+    font-size: 1.8rem;
+  }
+
+  header .hamburger {
+    padding: 8px;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 3;
+  }
+  header .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+  }
+
+  header .hamburger .line.blue-x {
+    background: var(--main-color);
+  }
+
+  header .hamburger .line:nth-child(2),
+  header .hamburger .line:nth-child(3) {
+    margin-top: 6px;
+  }
+
+  header .navbar {
+    height: 100vh;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--light-color);
+    transition: all 0.5s ease-out;
+    transform: translateX(768px);
+  }
+
+  header .navbar .nav-list {
+    flex-direction: column;
+    justify-content: center;
+    height: 70%;
+    padding-right: 0;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--main-color);
+  }
+
+  header .navbar.open {
+    transform: translateX(0);
+  }
+
+  header .navbar .nav-list .nav-list-item {
+    height: 12%;
+  }
+
+  .main-section .overlay h2 {
+    font-size: 1.2rem;
+  }
+
+  .main-section .overlay .main-title-sm {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .main-section .overlay .main-title {
+    font-size: 3rem;
+    margin-top: 3rem;
+  }
+
+  .main-section .overlay .buttons {
+    width: 90%;
+    justify-content: space-evenly;
+  }
+  .main-section .overlay .countdown {
+    width: 90%;
+  }
+
+  .about .text-content {
+    column-count: 1;
+    padding-top: 3rem;
+    width: 100%;
+  }
+
+  .about .text-content p {
+    margin-top: 0.8rem;
+  }
+
+  .registration .paragraph p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .registration .deadlines {
+    width: 90%;
+  }
+
+  .registration .registration-link h2 {
+    font-size: 18px;
+  }
+  .registration .registration-link h2 a:hover {
+    font-size: 20px;
+  }
+
+  .erasmus-footer {
+    width: 300px;
+    margin-left: -1rem;
+  }
+  .funding-info {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .schedule .schedule-wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  header .navbar {
+    width: 75%;
+    transform: translate(520px);
+  }
+
+  .main-section .overlay h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+
+  .main-section .overlay .main-title {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  .main-section .overlay .main-title-sm {
+    font-style: normal;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+
+  .main-section .overlay .buttons {
+    flex-direction: column;
+    height: 40%;
+    padding: 3rem;
+    justify-content: space-around;
+    margin-top: 0;
+  }
+
+  .topics .topics-wrapper-min .topic img {
+    transform: scale(1.2);
+  }
+
+  .info-bar {
+    flex-direction: column;
+  }
+  .info-bar .info-item {
+    margin-bottom: 1rem;
+    width: 300px;
+    padding: 1rem 0;
+    box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .form {
+    width: 100%;
+  }
+  .form form input {
+    width: 100%;
+  }
+
+  .registration .paragraph {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .schedule .schedule-wrapper {
+    width: 100%;
+  }
+  .schedule .schedule-wrapper .select-day {
+    width: 100%;
+  }
+  .schedule
+    .schedule-wrapper
+    .schedule-items-container
+    .schedule-items
+    .schedule-item {
+    width: 100%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .schedule
+    .schedule-wrapper
+    .schedule-items-container
+    .schedule-items
+    .schedule-item
+    .schedule-item-info {
+    padding: 0.5rem;
+    width: 25%;
+  }
+
+  .schedule
+    .schedule-wrapper
+    .schedule-items-container
+    .schedule-items
+    .schedule-item
+    h3 {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  .workshop .desc {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .pricing .table th,
+  .pricing .table td {
+    padding: 0.5rem;
+    height: 75px;
+    /* border-bottom: 3px solid #cccccc; */
+  }
+
+  .pricing .table th:nth-child(2) h2,
+  .pricing .table th:nth-child(3) h2 {
+    font-size: 18px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem 1rem;
+  }
+  .footer-left {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .fa-facebook {
+    margin-right: 10rem;
+  }
+
+  .erasmus-footer {
+    margin: 0.5rem 0;
+  }
+
+  .footer-right {
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 375px) {
+  .topics .topics-wrapper-min .topic img {
+    transform: scale(0.9);
+  }
+}
