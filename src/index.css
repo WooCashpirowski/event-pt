@@ -74,13 +74,13 @@ a {
 .section-header {
   text-align: center;
   font-size: 2.5rem;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 2rem 0;
 }
 .section-header-sm {
   text-align: center;
   font-size: 1.6rem;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem 0;
 }
 
@@ -316,6 +316,10 @@ header {
 
 .info-bar .info-item {
   text-align: center;
+  /* width: 33%; */
+  padding: 1rem 2rem;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .info-bar .info-item p {
@@ -334,6 +338,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .registration .paragraph {
@@ -393,11 +398,20 @@ header {
 }
 
 .registration-link h2 a {
-  transition: font-size 0.1s ease-in-out;
+  transition: font-size 0.2s ease-in-out;
 }
 
 .registration-link h2 a:hover {
   font-size: 1.55rem;
+}
+
+.email {
+  padding: 1rem 1rem 2rem;
+  transition: font-size 0.2s ease-in-out;
+}
+
+.email:hover {
+  font-size: 1.03rem;
 }
 
 /* SCHEDULE */
@@ -488,6 +502,8 @@ header {
   justify-content: center;
   text-align: center;
   margin-bottom: 1rem;
+  box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.1);
+  height: 180px;
 }
 
 .contact-data .contact-box .contact-icon {
@@ -567,8 +583,12 @@ footer {
 }
 
 .copyright {
-  background: var(--light-color);
-  color: var(--main-color);
-  text-align: center;
-  padding: 0.5rem 0;
+  background: var(--main-color);
+  color: var(--light-color);
+  padding: 0.5rem 1rem;
+  border-top: 1px solid rgba(187, 187, 187, 0.1);
+}
+
+.copyright .woo {
+  color: #bbb;
 }
