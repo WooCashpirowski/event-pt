@@ -161,7 +161,7 @@ header {
   width: 100%;
   height: 100%;
   background-color: rgba(49, 71, 158, 0.9);
-  color: var(--light-color);
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -299,24 +299,6 @@ header {
   right: -5px;
 }
 
-/* .topic.topic-left {
-  transform: translateX(-500px);
-  opacity: 0;
-  transition: all 1.5s ease-in-out;
-}
-
-.topic.topic-right {
-  transform: translateX(500px);
-  opacity: 0;
-  transition: all 1.5s ease-in-out;
-} */
-
-/* .topic.topic-left.appear,
-.topic.topic-right.appear {
-  transform: translateX(0px);
-  opacity: 1;
-} */
-
 .topics .topics-wrapper-min {
   display: none;
 }
@@ -326,7 +308,7 @@ header {
 .info-bar {
   background: var(--main-color);
   display: flex;
-  color: var(--light-color);
+  color: #fff;
   padding: 3rem;
   justify-content: space-around;
   align-items: center;
@@ -356,11 +338,12 @@ header {
 
 .registration .paragraph {
   width: 80%;
-  padding: 1.5rem;
+  padding: 0 0 1rem;
 }
 
 .registration .paragraph p {
-  font-size: 24px;
+  font-size: 20px;
+  text-align: center;
 }
 
 .registration .deadlines {
@@ -370,20 +353,25 @@ header {
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
-  margin: 3rem 0;
+  margin: 1rem 0;
 }
 
-.registration .deadlines .card {
+.card {
   padding: 1.5rem;
-  /* width: 315px; */
+  width: 315px;
   background: var(--secondary-color);
-  color: var(--light-color);
+  color: #fff;
   position: relative;
   z-index: 1;
   margin-bottom: 1rem;
 }
 
-.registration .deadlines .card::after {
+.card > h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.card::after {
   content: "";
   position: absolute;
   background: var(--main-color);
@@ -399,53 +387,6 @@ header {
   font-size: 18px;
 }
 
-.form-box .form,
-.form-box .form-sent {
-  background: var(--main-color);
-  padding: 1rem;
-  margin: 2rem 0;
-  box-shadow: 0px 0px 100px 0px rgba(49, 71, 158, 1);
-  text-align: center;
-  color: #fff;
-}
-
-.form-box .form-sent {
-  display: none;
-  width: 320px;
-}
-.form-box .form-sent h2 {
-  margin-bottom: 2rem;
-}
-
-.form-box .form form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-.form-box .form form input {
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-  min-width: 300px;
-  border-radius: 5px;
-}
-
-.form-box .form form input:focus {
-  border-bottom: 2px solid var(--secondary-color);
-}
-
-.form-box .form form label {
-  margin: 0.5rem 0;
-  width: 100%;
-  text-align: center;
-}
-
-.form-box .form form span {
-  color: #fff;
-  font-weight: normal;
-}
-
 .registration-link {
   padding-bottom: 2rem;
   text-align: center;
@@ -459,39 +400,9 @@ header {
   font-size: 1.55rem;
 }
 
-/* WORKSHOP */
-.workshop {
-  text-align: center;
-  color: var(--main-color);
-  background: url("/src/assets/img/workshop-2.jpg");
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.workshop .workshop-overlay {
-  background: rgba(237, 233, 233, 0.65);
-  padding-top: 2rem;
-  height: 100%;
-}
-
-.header-box {
-  width: 80%;
-  margin: 0 auto;
-  border: 5px solid var(--secondary-color);
-  box-shadow: 2px 2px 55px rgba(237, 233, 233, 0.3);
-}
-
-.workshop .desc {
-  width: 80%;
-  margin: 0 auto;
-  font-size: 1.5rem;
-  padding: 2rem;
-}
 /* SCHEDULE */
 
 .schedule {
-  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -499,68 +410,16 @@ header {
 }
 
 .schedule .schedule-wrapper {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.schedule .schedule-wrapper .select-day {
-  width: 70%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.schedule .schedule-wrapper .select-day .day {
-  padding: 1.2rem 3rem;
-  background: var(--light-color);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  transition: all 0.1s ease-in-out;
-  position: relative;
-}
-
-.schedule .schedule-wrapper .select-day .day:active {
-  transform: scale(0.95);
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-}
-
-.schedule .schedule-wrapper .select-day .day.active {
-  background: var(--main-color);
-  box-shadow: 5px 5px 15px rgba(49, 71, 158, 0.8);
-  color: var(--light-color);
-}
-
-.schedule .schedule-wrapper .select-day .day.active:active {
-  box-shadow: 5px 5px 5px rgba(49, 71, 158, 0.8);
-}
-
-.schedule .schedule-wrapper h2 {
-  margin: 5rem 0;
-}
-
-.schedule .schedule-wrapper .schedule-items-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .schedule .schedule-wrapper .schedule-items {
   width: 100%;
-  margin: 3rem 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-}
-
-.schedule .schedule-wrapper .schedule-items.active {
-  opacity: 1;
+  margin: 2rem 0;
 }
 
 .schedule .schedule-wrapper .schedule-items .schedule-item {
@@ -570,23 +429,20 @@ header {
   align-items: center;
   background: var(--light-color);
   margin-bottom: 5px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .schedule .schedule-wrapper .schedule-items .schedule-item .schedule-item-info {
   background: var(--main-color);
   color: #fff;
-  width: 20%;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  width: 30%;
+  text-align: center;
   padding: 1rem;
 }
 
 .schedule .schedule-wrapper .schedule-item .schedule-item-desc {
   color: var(--main-color);
-  width: 80%;
+  width: 70%;
   padding: 1rem 1.5rem;
 }
 
@@ -600,36 +456,12 @@ header {
   padding-bottom: 2rem;
 }
 
-.pricing .table th,
-.pricing .table td {
-  padding: 1rem 2rem;
-  height: 75px;
-  /* border-bottom: 3px solid #cccccc; */
-}
-
-.pricing .table th:nth-child(2),
-.pricing .table th:nth-child(3),
-.pricing .table td {
-  box-shadow: inset 0px 0px 10px 1px var(--main-color);
-}
-
-.pricing .table th:nth-child(2),
-.pricing .table th:nth-child(3) {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
-  width: 33%;
-}
-
-.pricing .table tr:nth-child(2),
-.pricing .table tr:nth-child(4) {
-  background: #fff;
-}
-
-.pricing .table tr td:first-child {
-  font-weight: bold;
-}
-
-.pricing p {
+.pricing h2 {
   text-align: center;
+}
+
+.pricing h3 {
+  margin-top: 2rem;
 }
 
 /* CONTACT */

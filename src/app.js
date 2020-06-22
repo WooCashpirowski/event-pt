@@ -6,9 +6,9 @@ import AOS from "../node_modules/aos/dist/aos";
 import "../node_modules/aos/dist/aos.css";
 
 // Counter
-(function() {
+(function () {
   setInterval(() => {
-    const eventDate = new Date("apr 2 2020, 10:00:00").getTime();
+    const eventDate = new Date("oct 30 2020, 10:00:00").getTime();
     const currentTime = new Date().getTime();
 
     const diff = eventDate - currentTime;
@@ -36,109 +36,62 @@ window.onscroll = () => {
     navbar.classList.remove("header-nav");
     logo.classList.remove("logo-sm");
   }
-  const currentScrollPos = window.pageYOffset;
-  if (prevScrollPos > currentScrollPos) {
-    navbar.style.top = "0";
-  } else {
-    navbar.style.top = "-100px";
+
+  if (screen.width > 768) {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+      navbar.style.top = "0";
+    } else {
+      navbar.style.top = "-100px";
+    }
+    prevScrollPos = currentScrollPos;
   }
-  prevScrollPos = currentScrollPos;
 };
 
-document.querySelector(".hamburger").addEventListener("click", () => {
-  document.querySelector(".navbar").classList.toggle("open");
-  document.querySelectorAll(".line").forEach(line => {
+document.querySelector(".hamburger").addEventListener("click", function () {
+  const burger = document.querySelectorAll(".line");
+  const navLinks = document.querySelectorAll(".nav-list-item");
+  const navbar = document.querySelector(".navbar");
+  navbar.classList.toggle("open");
+
+  this.classList.toggle("menu-active");
+
+  burger.forEach((line) => {
     line.classList.toggle("blue-x");
+  });
+  navLinks.forEach((item) => {
+    item.addEventListener("click", () => {
+      navbar.classList.remove("open");
+      burger.forEach((line) => {
+        line.classList.remove("blue-x");
+      });
+      this.classList.remove("menu-active");
+    });
   });
 });
 
 // Smooth Scroll
 
-document
-  .getElementById("home-link")
-  .addEventListener("click", () => jump("#home"));
-document
-  .getElementById("about-link")
-  .addEventListener("click", () => jump("#about"));
-document
-  .getElementById("registration-link")
-  .addEventListener("click", () => jump("#registration"));
-document
-  .getElementById("schedule-link")
-  .addEventListener("click", () => jump("#schedule"));
-document
-  .getElementById("pricing-link")
-  .addEventListener("click", () => jump("#pricing"));
-document
-  .getElementById("contact-link")
-  .addEventListener("click", () => jump("#contact"));
-document
-  .getElementById("registration-link-btn")
-  .addEventListener("click", () => jump("#registration"));
-document
-  .getElementById("topics-link-btn")
-  .addEventListener("click", () => jump(".topics"));
+const links = [
+  { id: "home-link", anchor: "#home" },
+  { id: "about-link", anchor: "#about" },
+  { id: "registration-link", anchor: "#registration" },
+  { id: "schedule-link", anchor: "#schedule" },
+  { id: "pricing-link", anchor: "#pricing" },
+  { id: "contact-link", anchor: "#contact" },
+  { id: "registration-link-btn", anchor: "#registration" },
+  { id: "topics-link-btn", anchor: ".topics" },
+];
+
+links.forEach((link) => {
+  document
+    .getElementById(link.id)
+    .addEventListener("click", () => jump(link.anchor));
+});
 
 // Topics fade-in
 
 AOS.init({
   offset: 100,
-  duration: 1500
-});
-
-// function appearOnScroll() {
-//   const topics = document.querySelectorAll(".topic");
-//   const screenPos = window.innerHeight - 150;
-//   topics.forEach(topic => {
-//     const pos = topic.getBoundingClientRect().top;
-//     if (pos < screenPos) {
-//       topic.classList.add("appear");
-//     }
-//   });
-// }
-
-// window.addEventListener("scroll", appearOnScroll);
-
-// Schedule tabs
-const days = document.querySelectorAll(".day"),
-  scheduleItemsBox = document.querySelectorAll(".schedule-items");
-
-days.forEach(day => {
-  day.addEventListener("click", function() {
-    scheduleItemsBox.forEach(items => {
-      items.className = "schedule-items";
-      document.getElementById(this.dataset.id).className =
-        "schedule-items active";
-      days.forEach(i => {
-        i.className = "day";
-      });
-      this.className = "day active";
-    });
-  });
-});
-
-// File upload button
-const realFileBtn = document.getElementById("file"),
-  customTxt = document.getElementById("custom-txt");
-
-realFileBtn.addEventListener("change", () => {
-  if (realFileBtn.value) {
-    customTxt.innerText = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
-    )[1];
-  } else {
-    customTxt.innerText = "No file chosen";
-  }
-});
-
-// Submit form
-// UI
-const formBox = document.querySelector(".form"),
-  form = document.querySelector("form"),
-  confirmation = document.querySelector(".form-sent");
-
-form.addEventListener("submit", e => {
-  formBox.style.display = "none";
-  confirmation.style.display = "block";
-  // e.preventDefault();
+  duration: 1500,
 });

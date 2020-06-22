@@ -27,30 +27,61 @@
     right: 0.5rem;
     z-index: 3;
   }
-  header .hamburger .line {
+  header .hamburger .lines .line {
     width: 30px;
     height: 3px;
     background: #fff;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+
+  header .hamburger .lines .line:last-child {
+    margin-top: 6px;
+  }
+
+  header .hamburger .lines .line:last-child {
+    width: 18px;
+    margin-left: 12px;
   }
 
   header .hamburger .line.blue-x {
     background: var(--main-color);
   }
 
-  header .hamburger .line:nth-child(2),
-  header .hamburger .line:nth-child(3) {
-    margin-top: 6px;
+  header .hamburger.menu-active .lines {
+    position: relative;
+  }
+
+  header .hamburger.menu-active .lines .line {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  header .hamburger.menu-active .lines .line:first-child {
+    top: 9px;
+    transform: rotate(225deg);
+  }
+
+  header .hamburger.menu-active .lines .line:last-child {
+    top: 3px;
+    width: 30px;
+    transform: rotate(-225deg);
   }
 
   header .navbar {
     height: 100vh;
-    width: 50%;
+    min-width: 315px;
     position: absolute;
     top: 0;
     right: 0;
     background: var(--light-color);
     transition: all 0.5s ease-out;
     transform: translateX(768px);
+  }
+
+  header .navbar.open {
+    transform: translateX(0);
   }
 
   header .navbar .nav-list {
@@ -63,12 +94,15 @@
     color: var(--main-color);
   }
 
-  header .navbar.open {
-    transform: translateX(0);
+  header .navbar .nav-list {
+    margin-top: 3rem;
   }
 
   header .navbar .nav-list .nav-list-item {
-    height: 12%;
+    padding: 2rem 0;
+    width: 315px;
+    text-align: center;
+    border-bottom: 1px solid #dddddd;
   }
 
   .main-section .overlay h2 {
@@ -228,18 +262,6 @@
   .workshop .desc {
     width: 100%;
     font-size: 1.2rem;
-  }
-
-  .pricing .table th,
-  .pricing .table td {
-    padding: 0.5rem;
-    height: 75px;
-    /* border-bottom: 3px solid #cccccc; */
-  }
-
-  .pricing .table th:nth-child(2) h2,
-  .pricing .table th:nth-child(3) h2 {
-    font-size: 18px;
   }
 
   footer {

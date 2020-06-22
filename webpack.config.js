@@ -6,28 +6,34 @@ const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    app: ["@babel/polyfill", "./src/app.js"]
+    app: ["@babel/polyfill", "./src/app.js"],
   },
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "app.bundle.js"
+    filename: "app.bundle.js",
   },
 
   devServer: {
-    port: 4000
+    port: 4000,
   },
 
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: "babel-loader"
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
-      }
-    ]
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+    ],
   },
 
   plugins: [
@@ -39,12 +45,12 @@ module.exports = {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     }),
     new MiniCssExtractPlugin({
-      filename: "app.bundle.css"
+      filename: "app.bundle.css",
     }),
-    new CopyPlugin([{ from: "src/assets", to: "assets" }])
-  ]
+    new CopyPlugin([{ from: "src/assets", to: "assets" }]),
+  ],
 };
