@@ -14,7 +14,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .section-header {
     font-size: 1.8rem;
   }
@@ -163,12 +163,6 @@
   }
 }
 
-@media (max-width: 600px) {
-  .schedule .schedule-wrapper {
-    width: 100%;
-  }
-}
-
 @media (max-width: 520px) {
   header .navbar {
     width: 75%;
@@ -224,43 +218,46 @@
     padding: 1.5rem;
   }
 
-  .schedule .schedule-wrapper {
-    width: 100%;
-  }
-  .schedule .schedule-wrapper .select-day {
-    width: 100%;
-  }
-  .schedule
-    .schedule-wrapper
-    .schedule-items-container
-    .schedule-items
-    .schedule-item {
-    width: 100%;
+  .schedule .schedule-wrapper .schedule-items .schedule-item {
+    width: 95%;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   }
 
   .schedule
     .schedule-wrapper
-    .schedule-items-container
     .schedule-items
     .schedule-item
     .schedule-item-info {
     padding: 0.5rem;
-    width: 25%;
+    width: 20%;
   }
 
   .schedule
     .schedule-wrapper
-    .schedule-items-container
     .schedule-items
     .schedule-item
+    .schedule-item-info
     h3 {
     font-size: 1rem;
-    font-weight: normal;
   }
-  .workshop .desc {
-    width: 100%;
-    font-size: 1.2rem;
+
+  .schedule
+    .schedule-wrapper
+    .schedule-items
+    .schedule-item
+    .schedule-item-desc {
+    padding: 0.5rem;
+    width: 80%;
+  }
+
+  .schedule .schedule-wrapper .schedule-items .schedule-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .pricing {
+    text-align: center;
+    padding: 0 1rem 2rem;
   }
 
   footer {

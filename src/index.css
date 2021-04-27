@@ -256,6 +256,7 @@ header {
   align-items: center;
   justify-content: baseline;
   flex-direction: column;
+  padding-bottom: 5rem;
 }
 
 .topics .topics-wrapper {
@@ -309,21 +310,21 @@ header {
   background: var(--main-color);
   display: flex;
   color: #fff;
-  padding: 3rem;
+  padding: 4rem 2rem;
   justify-content: space-around;
   align-items: center;
 }
 
 .info-bar .info-item {
   text-align: center;
-  /* width: 33%; */
-  padding: 1rem 2rem;
+  padding: 2rem 3.2rem;
   transition: all 0.2s ease;
   box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .info-bar .info-item p {
   font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .info-bar .info-item p:first-of-type {
@@ -338,7 +339,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding-bottom: 3rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .registration .paragraph {
@@ -440,24 +442,47 @@ header {
   margin: 0 auto;
   display: flex;
   width: 80%;
-  align-items: center;
   background: var(--light-color);
-  margin-bottom: 5px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .schedule .schedule-wrapper .schedule-items .schedule-item .schedule-item-info {
   background: var(--main-color);
   color: #fff;
-  width: 30%;
-  text-align: center;
-  padding: 1rem;
+  width: 15%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  border-left: 2px solid var(--secondary-color);
+}
+.schedule
+  .schedule-wrapper
+  .schedule-items
+  .schedule-item
+  .schedule-item-info
+  h3 {
+  font-weight: normal;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
 .schedule .schedule-wrapper .schedule-item .schedule-item-desc {
   color: var(--main-color);
-  width: 70%;
   padding: 1rem 1.5rem;
+  line-height: 1.5;
+  width: 85%;
+}
+.schedule .schedule-wrapper .schedule-item .schedule-item-desc h4 {
+  margin-top: 0.7rem;
+  margin-left: 0.7rem;
+  font-style: italic;
+  font-weight: 500;
+}
+.schedule .schedule-wrapper .schedule-item .schedule-item-desc .fn {
+  font-weight: 500;
 }
 
 /* PRICING */
